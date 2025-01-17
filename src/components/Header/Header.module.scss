@@ -1,0 +1,24 @@
+.header{
+  position: absolute;
+  width: 100%;
+  padding: 2rem 0;
+  .container{
+    @include container();
+    .grid{
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+
+      .logo{
+        font-weight: 700;
+        font-size: clamp(22px, 3vw ,45px);
+        font-family: $font-family;
+      }
+      .sair{
+        font-weight: 700;
+        font-size: min( 31px,2vw);
+        font-family: $font-family;
+      }
+    }
+  }
+}

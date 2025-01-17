@@ -41,6 +41,10 @@
   }
 }
 
+.container {
+  @include container();
+}
+
 .grid {
   display: grid;
 }
@@ -75,112 +79,4 @@
   }
 }
 
-@mixin paragraph() {
-  font-family: var.$font-family;
-  font-size: 1.6rem;
-  line-height: 1.21;
-  color: var.$secondary-color-gray;
 
-  @include media(lg) {
-    font-size: 1.8rem;
-  }
-}
-
-@mixin FontSize($size, $family) {
-  font-family: $family;
-
-  @if $size == 14 {
-    font-size: 14px;
-  } @else if $size == 16 {
-    font-size: 16px;
-  } @else if $size == 22 {
-    font-size: 22px;
-    line-height: 39.6px;
-  } @else if $size == 26 {
-    font-size: 26px;
-  } @else if $size == 38 {
-    font-size: 38px;
-  } @else if $size == 48 {
-    font-size: 48px;
-  } @else if $size == 58 {
-    font-size: 58px;
-  } @else if $size == 64 {
-    font-size: 64px;
-  } @else {
-    font-size: 14px;
-  }
-}
-
-@mixin Inputsearch() {
-  padding: 0 25px;
-  display: flex;
-  justify-content: center;
-  height: 40px;
-  width: 100%;
-
-  input {
-    width: 100%;
-    background-color: var.$color-white;
-    border: none;
-    padding: 0 15px;
-    border-top-left-radius: 6px;
-    border-bottom-left-radius: 6px;
-    font-family: var.$font-family;
-    font-size: 1.6rem;
-  }
-
-  input::placeholder {
-    font-size: 1.6rem;
-    color: var.$color-medium-gray;
-    font-family: var.$font-family;
-  }
-
-  button {
-    background-color: var.$color-white;
-    border-top-right-radius: 6px;
-    border-bottom-right-radius: 6px;
-    border: none;
-
-    i {
-      font-size: 1.6rem;
-      margin-right: 15px;
-      color: var.$color-bright-red;
-    }
-  }
-}
-
-@mixin VersaoMobile() {
-  display: block;
-
-  @include media(lg) {
-    display: none;
-  }
-}
-
-@mixin VersaoDesktop() {
-  display: none;
-
-  @include media(lg) {
-    display: block;
-  }
-}
-
-.bannerMobile {
-  @include VersaoMobile();
-}
-
-.bannerDesktop {
-  @include VersaoDesktop();
-}
-
-.bg-gray {
-  background-color: var.$color-lightest-gray-alt;
-}
-
-* {
-  font-family: var.$font-family;
-}
-
-@mixin hoveBtn {
-  background-color: var.$color-red-dark;
-}
