@@ -1,0 +1,27 @@
+.areaInput {
+  margin-bottom: 1rem;
+  font-family: $font-family;
+  label{
+    span{
+      font-size: 1.8rem;
+      font-weight: 700;
+      margin-bottom: 0.8rem;
+      display: block;
+    }
+    input{
+      background-color: $color-light-gray;
+      border: 1px solid $color-light-gray;
+      padding: 10px;
+      height: 54px;
+      width: 100%;
+      border-radius: 5px;
+      font-size: 1.6rem;
+    }
+  }
+  .erro{
+    display: block;
+    font-size: 1.2rem;
+    color: $color-bright-red;
+    margin: 1rem 0;
+  }
+}

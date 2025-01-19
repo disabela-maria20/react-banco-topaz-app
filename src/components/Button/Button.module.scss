@@ -1,3 +1,22 @@
-.btn {
-  color: $color-bright-red;
+button.btn{
+  background: $color-dark-blue;
+  color: $color-white;
+  border: 1px solid $color-dark-blue;
+  padding: 10px 25px;
+  font-size: 1.6rem;
+  border-radius: 5px;
+  text-transform: uppercase;
+  display: block;
+  width: 100%;
+  margin-top: 35px;
+  transition: all 400ms ease;
+  cursor: pointer;
+
+  &:hover{
+    background-color: darken($color-dark-blue, 5%);
+  }
+
+  &:focus{
+    background-color: darken($color-dark-blue, 12%);
+  }
 }
