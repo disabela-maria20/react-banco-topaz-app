@@ -1,3 +1,5 @@
 export { default as Button } from './Button/Button'
 export { default as Header } from './Header/Header'
+export { default as Notification } from './Notification/Notification'
 export { Form } from './Form'
+export { Profile } from './Profile'

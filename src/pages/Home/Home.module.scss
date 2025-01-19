@@ -1,0 +1,71 @@
+@use "sass:color";
+
+.Profile {
+  font-family: $font-family;
+  .data {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .saldo {
+    h3 {
+      font-size: 1.5rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      padding-bottom: 15px;
+    }
+  }
+  .flex {
+    display: grid;
+    width: 100%;
+    gap: 10px;
+    @include media(xl) {
+      grid-template-columns: 1fr 1fr;
+      align-items: center;
+      flex-direction: column;
+    }
+    .carteira {
+      background: $color-light-gray;
+      padding: 10px 20px;
+      border-radius: 5px;
+      display: flex;
+      align-items: center;
+      gap: 15px;
+    }
+    .link {
+      display: flex;
+      gap: 10px;
+      flex-direction: column;
+      @include media(xl) {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+      }
+      a {
+        background: $color-dark-blue;
+        color: $color-white;
+        border: 1px solid $color-dark-blue;
+        padding: 10px 25px;
+        font-size: 1.5rem;
+        border-radius: 5px;
+        text-transform: uppercase;
+        display: block;
+        width: 100%;
+        transition: all 400ms ease;
+        cursor: pointer;
+        text-decoration: none;
+        text-align: center;
+  
+        &:hover {
+          background-color: color.scale($color-dark-blue, $lightness: -53.2173913043%);
+        }
+
+        &:focus {
+          background-color: color.adjust($color-dark-blue, $lightness: -12%);
+        }
+      }
+    }
+  }
+}
