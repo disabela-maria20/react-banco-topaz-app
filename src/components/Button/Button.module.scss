@@ -1,3 +1,5 @@
+@use 'sass:color';
+
 button.btn{
   background: $color-dark-blue;
   color: $color-white;
@@ -13,10 +15,10 @@ button.btn{
   cursor: pointer;
 
   &:hover{
-    background-color: darken($color-dark-blue, 5%);
+    background-color: color.scale($color-dark-blue, $lightness: -53.2173913043%);
   }
 
   &:focus{
-    background-color: darken($color-dark-blue, 12%);
+    background-color: color.adjust($color-dark-blue, $lightness: -12%);
   }
 }

@@ -3,9 +3,12 @@
   justify-content: center;
   align-items: center;
   height: 100%;
+  position: absolute;
+  top: 0;
+  width: 100%;
   .card {
     background-color: $color-white;
-    padding: min(2em, 8%);
+    padding: min(35px, 5%);
     width: clamp(320px, 40vw, 750px);
     border-radius: 5px;
     box-shadow: 0px 5px 10px 0px #d8e2e4;

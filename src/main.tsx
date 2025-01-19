@@ -3,16 +3,18 @@ import { createRoot } from 'react-dom/client'
 
 import Context from './services/context'
 import Router from './router'
-import { Bg } from './ui'
 import { Header } from './components'
+import { UI } from './ui'
+
+import './styles/index.scss'
 
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
     <Context>
-      <Bg>
+      <UI.Bg>
         <Header />
-        <Router />
-      </Bg>
+      </UI.Bg>
+      <Router />  
     </Context>
   </StrictMode>
 )

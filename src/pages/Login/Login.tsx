@@ -1,6 +1,6 @@
 import style from './Login.module.scss'
 
-import { Card } from '../../ui'
+import { UI } from '../../ui'
 import { Button, Form } from '../../components'
 import { useForm } from 'react-hook-form'
 import { zodResolver } from '@hookform/resolvers/zod';
@@ -47,14 +47,14 @@ const Login = () => {
   }
   return (
     <>
-      <Card>
+      <UI.Card>
       <form onSubmit={handleSubmit((data) => onSubmit(data))} className={style.form}>
         <h1>Entrar</h1>
         <Form.Input type='text' {...register('email')} label='E-mail' ErrorText={errors?.email?.message} />
         <Form.Input type='password'{...register('senha')} label='Senha' ErrorText={errors?.senha?.message} />
         <Button type='submit'>Acessar</Button>
       </form>
-    </Card>
+    </UI.Card>
     <span>{error?.message}</span>
     </>
     

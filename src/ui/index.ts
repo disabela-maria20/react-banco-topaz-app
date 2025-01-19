@@ -1,2 +1,7 @@
-export { default as Bg } from './Bg'
-export { default as Card } from './Card'
+import Bg from './Bg'
+import Card from './Card'
+
+export const UI = {
+  Bg: Bg,
+  Card: Card
+}
