@@ -1,5 +1,5 @@
-import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
-import { Extrato, Home, Login, Transfer } from './pages';
+import { Routes, Route, Navigate } from 'react-router-dom';
+import { Erro, Extrato, Home, Login, Transfer } from './pages';
 import { useAuth } from './hook/useAuth';
 import { Suspense } from 'react';
 
@@ -14,7 +14,7 @@ const Router = () => {
           element={isAuthenticated ? <Navigate to="/home" replace /> : <Login />}
         />
 
-        <Route path="*" element={<p>Rota não encontrada</p>} />
+        <Route path="*" element={<Erro/>} />
 
         {isAuthenticated && (
           <>

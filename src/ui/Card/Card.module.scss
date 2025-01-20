@@ -11,14 +11,16 @@
   }
 
   @include media(lg) {
-    margin-top: 10%;
-    height: 100%;
+    margin-top: 5%;
+    height: calc(100vh - 10%);
+    
   }
 
   @include media(xxl) {
     margin: 0;
   }
   .card {
+    font-family: $font-family;
     background-color: $color-white;
     padding: min(35px, 5%);
     width: clamp(320px, 55vw, 750px);
