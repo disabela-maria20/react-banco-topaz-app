@@ -27,7 +27,7 @@ const Home = () => {
             </div>
             <nav className={style.link}>
               <NavLink to={'/transferir'}>transferir</NavLink>
-              <NavLink to={'/extarto'}>extrato</NavLink>
+              <NavLink to={'/extrato'}>extrato</NavLink>
             </nav>
           </div>
         </div>

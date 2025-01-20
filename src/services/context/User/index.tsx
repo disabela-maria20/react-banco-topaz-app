@@ -1,6 +1,6 @@
 import { useQuery } from "@tanstack/react-query";
 import React, { createContext, useEffect, useState } from "react";
-import { getUsuaurio, updateUserBalance } from "../../resquest";
+import { getUserProfile, updateUserBalance } from "../../resquest";
 import { useAuth } from "../../../hook/useAuth";
 import { UsuariosContextData, UsuariosProps } from "../../model";
 
@@ -31,7 +31,7 @@ export const UserProvider = ({ children }: { children: React.ReactNode }) => {
 
   const { isPending, error, data, refetch  } = useQuery({
     queryKey: ['data', id],
-    queryFn: () => getUsuaurio(id),
+    queryFn: () => getUserProfile(id!),
     enabled: !!id,
   });
   
@@ -57,8 +57,6 @@ export const UserProvider = ({ children }: { children: React.ReactNode }) => {
     await refetch()
   };
   
-  
-
 
   return (
     <UserContext.Provider value={{ user: data ?? user, error, isPending, setTransfer }}>

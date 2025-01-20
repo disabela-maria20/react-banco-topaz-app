@@ -2,10 +2,22 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100%;
   position: absolute;
   top: 0;
   width: 100%;
+  margin-top: 25%;
+  @include media(sm) {
+    margin-top: 50%;
+  }
+
+  @include media(lg) {
+    margin-top: 10%;
+    height: 100%;
+  }
+
+  @include media(xxl) {
+    margin: 0;
+  }
   .card {
     background-color: $color-white;
     padding: min(35px, 5%);
@@ -13,7 +25,7 @@
     border-radius: 5px;
     box-shadow: 0px 5px 10px 0px #d8e2e4;
     transition: all 400ms ease;
-    p{
+    p {
       font-size: 2rem;
       font-family: $font-family;
     }

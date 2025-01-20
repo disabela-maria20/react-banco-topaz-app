@@ -7,7 +7,7 @@ import { zodResolver } from '@hookform/resolvers/zod';
 
 import { z } from 'zod'
 import { useMutation } from '@tanstack/react-query';
-import { validacaoUsuario } from '../../services/resquest';
+import { authenticateUser } from '../../services/resquest';
 import { useNavigate } from 'react-router-dom';
 import { useAuth } from '../../hook/useAuth';
 import { useEffect, useState } from 'react';
@@ -42,7 +42,7 @@ const Login = () => {
   })
 
   const { mutateAsync, error } = useMutation({
-    mutationFn: validacaoUsuario,
+    mutationFn: authenticateUser,
     onSuccess: (data) => {
       if (data?.user?.id) login(data.user.id);
       navigate('/home')

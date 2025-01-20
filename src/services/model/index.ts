@@ -22,9 +22,11 @@ export interface UsuariosContextData {
 export interface TransferProps {
   id: number
   transferValue: string;
-  bank: string;
-  agency: string;
-  account: string;
-  name: string;
-  schedule?: string;
+  bank: string
+  agency: string
+  account: string
+  name: string
+  schedule?: string
+  id_transfers?: number
+  isScheduling: boolean
 }

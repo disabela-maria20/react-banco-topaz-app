@@ -46,28 +46,25 @@
 }
 
 @mixin btn {
-  
-    background: var.$color-dark-blue;
-    color: var.$color-white;
-    border: 1px solid var.$color-dark-blue;
-    padding: 10px 25px;
-    font-size: 1.5rem;
-    border-radius: 5px;
-    text-transform: uppercase;
-    display: block;
-    width: 100%;
-    transition: all 400ms ease;
-    cursor: pointer;
-    text-decoration: none;
-    text-align: center;
+  background: var.$color-dark-blue;
+  color: var.$color-white;
+  border: 1px solid var.$color-dark-blue;
+  padding: 10px 25px;
+  font-size: 1rem;
+  border-radius: 5px;
+  text-transform: uppercase;
+  display: block;
+  width: 100%;
+  transition: all 400ms ease;
+  cursor: pointer;
+  text-decoration: none;
+  text-align: center;
 
-    &:hover {
-      background-color: color.scale(var.$color-dark-blue, $lightness: -53.2173913043%);
-    }
+  &:hover {
+    background-color: color.scale(var.$color-dark-blue, $lightness: -53.2173913043%);
+  }
 
-    &:focus {
-      background-color: color.adjust(var.$color-dark-blue, $lightness: -12%);
-    }
-  
+  &:focus {
+    background-color: color.adjust(var.$color-dark-blue, $lightness: -12%);
+  }
 }
-

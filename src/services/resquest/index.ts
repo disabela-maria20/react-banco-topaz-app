@@ -11,7 +11,7 @@ const api = axios.create({
 // JSON Server não possui suporte nativo para autenticação, então,
 // decidi  fazer uma requisição GET com o parâmetro email,
 // para buscar os usuários registrados e validar a senha diretamente no frontend.
-export const validacaoUsuario = async (data: UsuariosProps) => {
+export const authenticateUser = async (data: UsuariosProps) => {
   const config: AxiosRequestConfig = {
     method: "GET",
     url: "users",
@@ -39,7 +39,7 @@ export const validacaoUsuario = async (data: UsuariosProps) => {
   }
 };
 
-export const getUsuaurio = async (id: string): Promise<UsuariosProps> => {
+export const getUserProfile = async (id: string): Promise<UsuariosProps> => {
   const config: AxiosRequestConfig = {
     method: "GET",
     url: `users/${id}`,
@@ -48,6 +48,7 @@ export const getUsuaurio = async (id: string): Promise<UsuariosProps> => {
   try {
     const res = await api(config);
     const data: UsuariosProps = res.data;
+    console.log(data);
     
     if (!data) {
       throw new Error("Usuario não entrado");
@@ -93,3 +94,18 @@ export const updateUserBalance = async (id: number, balance: UsuariosProps) => {
     throw new Error(e.message);
   }
 };
+
+export const getExtract = async () => {
+  const config : AxiosRequestConfig = {
+    method: 'GET',
+    url: '/transfers'
+  }
+  try {
+    const response = await api(config);
+    const data: TransferProps[] = await response.data;
+    return data
+  } catch (error) {
+    const e = error as AxiosError;
+    throw new Error(e.message);
+  }
+}
