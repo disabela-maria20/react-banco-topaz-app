@@ -29,7 +29,7 @@ jest.mock('../../services/resquest', () => ({
 
 jest.useFakeTimers(); 
 
-const mockPostTransfer = require('../../services/resquest');
+const mockPostTransfer = require('../../services/resquest').postTransfer;
 
 
 const user = useUser as jest.Mock

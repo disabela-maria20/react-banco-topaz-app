@@ -5,7 +5,7 @@
       "email": "joao.silva@email.com",
       "senha": "joao.silva@email.com",
       "name": "João Silva",
-      "balance": 3750
+      "balance": 3250
     },
     {
       "id": "2",
@@ -71,6 +71,16 @@
       "account": "2222222222",
       "name": "aaaaaaaaaaaaaa",
       "schedule": "2025-01-20T13:09"
+    },
+    {
+      "id": "1",
+      "transferValue": "500",
+      "bank": "Banco A",
+      "agency": "555555555",
+      "account": "555555555",
+      "name": "aaaaaaaaaaaa",
+      "schedule": "2025-01-20T19:11",
+      "isScheduling": false
     }
   ]
 }
