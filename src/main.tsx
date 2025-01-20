@@ -7,14 +7,18 @@ import { Header } from './components'
 import { UI } from './ui'
 
 import './styles/index.scss'
+import { BrowserRouter } from 'react-router-dom'
 
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
-    <Context>
-      <UI.Bg>
-        <Header />
-      </UI.Bg>
-      <Router />  
-    </Context>
+    <BrowserRouter>
+      <Context>
+        <UI.Bg>
+          <Header />
+        </UI.Bg>
+        <Router />
+      </Context>
+    </BrowserRouter>
+
   </StrictMode>
 )

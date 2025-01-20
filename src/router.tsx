@@ -1,27 +1,39 @@
-import { BrowserRouter, Routes, Route } from 'react-router-dom'
-import { Extrato, Home, Login, Transfer } from './pages'
-import { useAuth } from './hook/useAuth'
-import { Suspense } from 'react'
+import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
+import { Extrato, Home, Login, Transfer } from './pages';
+import { useAuth } from './hook/useAuth';
+import { Suspense } from 'react';
 
 const Router = () => {
-  const { isAuthenticated } = useAuth()
+  const { isAuthenticated } = useAuth();
 
   return (
     <Suspense fallback={<p>Carregando...</p>}>
-      <BrowserRouter>
       <Routes>
-        <Route path="/" element={<Login />} />
-        <Route path="*" element={<p>Rota não encontarda</p>} />
-        {isAuthenticated && <>
-          <Route path="/home" element={<Home />} />
-          <Route path="/transferir" element={<Transfer />} />
-          <Route path="/extarto" element={<Extrato />} />
-        </>}
-      </Routes>
-    </BrowserRouter>
-    </Suspense>
-    
-  )
-}
+        <Route
+          path="/"
+          element={isAuthenticated ? <Navigate to="/home" replace /> : <Login />}
+        />
 
-export default Router
+        <Route path="*" element={<p>Rota não encontrada</p>} />
+
+        {isAuthenticated && (
+          <>
+            <Route path="/home" element={<Home />} />
+            <Route path="/transferir" element={<Transfer />} />
+            <Route path="/extrato" element={<Extrato />} />
+          </>
+        )}
+
+        {!isAuthenticated && (
+          <>
+            <Route path="/home" element={<Navigate to="/" replace />} />
+            <Route path="/transferir" element={<Navigate to="/" replace />} />
+            <Route path="/extrato" element={<Navigate to="/" replace />} />
+          </>
+        )}
+      </Routes>
+    </Suspense>
+  );
+};
+
+export default Router;

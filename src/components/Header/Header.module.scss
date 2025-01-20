@@ -21,6 +21,9 @@
         font-family: $font-family;
         text-transform: uppercase;
         z-index: 9999;
+        background: none;
+        border: none;
+        cursor: pointer;
       }
     }
   }
