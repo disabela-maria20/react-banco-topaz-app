@@ -1,4 +1,4 @@
-import { useUser } from '../../../hook/useUser';
+import { useUser } from '../../../services/context/User';
 import style from './Name.module.scss'
 
 const Name = () => {

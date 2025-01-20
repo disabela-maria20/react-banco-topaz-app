@@ -21,8 +21,8 @@ Siga os passos abaixo para configurar o ambiente local:
 1. Clone o repositório:
 
 ```bash
-git clone https://github.com/seu-usuario/seu-repositorio.git
-cd seu-repositorio
+git clone https://github.com/disabela-maria20/react-banco-topaz-app.git
+cd react-banco-topaz-app
 ```
 
 2. Instale as dependências do projeto:

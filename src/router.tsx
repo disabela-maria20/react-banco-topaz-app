@@ -1,7 +1,7 @@
 import { Routes, Route, Navigate } from 'react-router-dom';
 import { Erro, Extrato, Home, Login, Transfer } from './pages';
-import { useAuth } from './hook/useAuth';
 import { Suspense } from 'react';
+import { useAuth } from './services/context/Auth';
 
 const Router = () => {
   const { isAuthenticated } = useAuth();

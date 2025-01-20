@@ -9,17 +9,19 @@ import { z } from 'zod'
 import { useMutation } from '@tanstack/react-query';
 import { authenticateUser } from '../../services/resquest';
 import { useNavigate } from 'react-router-dom';
-import { useAuth } from '../../hook/useAuth';
 import { useEffect, useState } from 'react';
+import { useAuth } from '../../services/context/Auth';
 
 const schema = z.object({
   email: z.string()
     .min(3, 'Por favor, informe um e-mail válido')
     .regex(/^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/, 'Formato de e-mail inválido'),
-  senha: z.string().min(3, 'Por favor, informe uma senha válida')
+  senha: z.string().min(3, 'Por favor, informe uma senha válida'),
+  balance: z.number().optional(),
+  name: z.string().optional()
 })
 
-type LoginProps = z.infer<typeof schema>
+type LoginProps = z.infer<typeof schema> 
 
 const Login = () => {
   const { login } = useAuth();
@@ -53,7 +55,12 @@ const Login = () => {
   })
 
   const onSubmit = async (data: LoginProps) => {
-    await mutateAsync(data);
+    const userData = { 
+      ...data, 
+      balance: data.balance ?? 0,
+      name: data.name ?? ''
+    };
+    await mutateAsync(userData);
   }
 
   return (

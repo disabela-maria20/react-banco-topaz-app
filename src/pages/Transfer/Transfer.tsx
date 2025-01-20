@@ -8,7 +8,7 @@ import { useMutation } from '@tanstack/react-query';
 import { postTransfer } from '../../services/resquest';
 import { useForm } from 'react-hook-form';
 import { useState } from 'react';
-import { useUser } from '../../hook/useUser';
+import { useUser } from '../../services/context/User';
 
 const transferSchema = z
   .object({

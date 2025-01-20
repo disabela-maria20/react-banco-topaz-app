@@ -2,9 +2,9 @@ import style from './Home.module.scss'
 
 import { UI } from '../../ui'
 import { Profile } from '../../components'
-import { useUser } from '../../hook/useUser';
 
 import { NavLink } from "react-router-dom";
+import { useUser } from '../../services/context/User';
 
 const Home = () => {
   const { isPending, error } = useUser();

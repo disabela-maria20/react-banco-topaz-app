@@ -1,8 +1,7 @@
+import { useAuth } from '../../services/context/Auth';
 import style from './Header.module.scss'
 
 import { useNavigate } from 'react-router-dom';
-
-import { useAuth } from '../../hook/useAuth'
 
 const Header = () => {
   const user = useAuth()

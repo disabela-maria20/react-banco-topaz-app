@@ -1,8 +1,9 @@
 import { useQuery } from "@tanstack/react-query";
-import React, { createContext, useEffect, useState } from "react";
-import { getUserProfile, updateUserBalance } from "../../resquest";
-import { useAuth } from "../../../hook/useAuth";
+import React, { createContext, useContext, useEffect, useState } from "react";
+
 import { UsuariosContextData, UsuariosProps } from "../../model";
+import { useAuth } from "../Auth";
+import { getUserProfile, updateUserBalance } from "../../resquest";
 
 export const UserContext = createContext<UsuariosContextData>({
   user: {
@@ -63,5 +64,10 @@ export const UserProvider = ({ children }: { children: React.ReactNode }) => {
       {children}
     </UserContext.Provider>
   );
+};
+
+export const useUser = () => {
+  return useContext(UserContext);
+
 };
 

@@ -1,5 +1,5 @@
 import { useMoney } from '../../../hook/useMoney';
-import { useUser } from '../../../hook/useUser';
+import { useUser } from '../../../services/context/User';
 import style from './Balance.module.scss';
 
 const Balance = () => {
