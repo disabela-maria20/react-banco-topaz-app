@@ -10,7 +10,6 @@ type InputProps = InputHTMLAttributes<HTMLInputElement> & {
 const Input = forwardRef<HTMLInputElement, InputProps>(({ type = 'text', name='', label='', ErrorText = "",  ...props }, ref) => {
   const inputId = useId()
   const hasErro = ErrorText.length > 0
-  const hasLabel = label.length > 0
 
   return (
     <div className={style.areaInput}>
