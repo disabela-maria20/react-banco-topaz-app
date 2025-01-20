@@ -1,50 +1,62 @@
-# React + TypeScript + Vite
+# React Application with JSON Server
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Este repositório contém uma aplicação React integrada com **JSON Server** para simulação de uma API local, além de **Jest** para testes automatizados. A aplicação simula a transferência, agendamento e extratos
 
-Currently, two official plugins are available:
+A API simulada pelo JSON Server inclui duas rotas principais:
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- **`/users`** – Retorna uma lista com 3 itens de usuários.
+- **`/transfers`** – Retorna uma lista com 5 itens de transferências.
 
-## Expanding the ESLint configuration
+## Pré-requisitos
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+Antes de começar, você precisará ter os seguintes softwares instalados:
 
-- Configure the top-level `parserOptions` property like this:
+- [Node.js](https://nodejs.org/) (recomenda-se a versão LTS) v22
+- [npm](https://www.npmjs.com/) (gerenciador de pacotes do Node)
 
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
+## Instalação
+
+Siga os passos abaixo para configurar o ambiente local:
+
+1. Clone o repositório:
+
+```bash
+git clone https://github.com/seu-usuario/seu-repositorio.git
+cd seu-repositorio
 ```
 
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
+2. Instale as dependências do projeto:
 
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
+```bash
+npm install
+```
 
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
+## Executando a Aplicação
+
+Para iniciar a aplicação no ambiente de desenvolvimento, utilize o comando:
+
+```bash
+npm run dev
+```
+
+Este comando irá executar dois processos simultaneamente utilizando o **concurrently**:
+
+- `npm run dev:react` – Inicia o servidor de desenvolvimento do React com Vite.
+- `npm run dev:server` – Inicia o JSON Server, que simula uma API local e observa alterações no arquivo `db.json` na porta `3001`.
+
+### URLs Locais
+
+- A aplicação React estará disponível em: [http://localhost:3000](http://localhost:3000)
+- O JSON Server estará disponível em: [http://localhost:3001](http://localhost:3001)
+
+### Endpoints da API
+
+A API simulada possui os seguintes endpoints:
+
+## Testes
+
+A aplicação também utiliza o Jest para testes automatizados. Para rodar os testes, utilize o seguinte comando:
+
+```bash
+npm run test
 ```
