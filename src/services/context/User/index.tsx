@@ -1,38 +1,67 @@
 import { useQuery } from "@tanstack/react-query";
 import React, { createContext, useEffect, useState } from "react";
-import { getUsuaurio } from "../../resquest";
+import { getUsuaurio, updateUserBalance } from "../../resquest";
 import { useAuth } from "../../../hook/useAuth";
+import { UsuariosContextData, UsuariosProps } from "../../model";
 
 export const UserContext = createContext<UsuariosContextData>({
-  user: [{
+  user: {
     name: '',
-    userId: 0,
-    balance: 0
-  }],
+    id: 0,
+    balance: 0,
+    email: "",
+    senha: ""
+  },
   error: null,
   isPending: false,
+  setTransfer: async () => { }
 });
 
 export const UserProvider = ({ children }: { children: React.ReactNode }) => {
-  const [user, setUser] = useState<any[]>([]);
+  const [user, setUser] = useState<UsuariosProps>({
+    name: '',
+    id: 0,
+    balance: 0,
+    email: "",
+    senha: ""
+  });
 
   const { getUser } = useAuth();
   const id = getUser();
 
-  const { isPending, error, data } = useQuery({
+  const { isPending, error, data, refetch  } = useQuery({
     queryKey: ['data', id],
     queryFn: () => getUsuaurio(id),
     enabled: !!id,
   });
-
+  
   useEffect(() => {
     if (data) {
-      setUser(data); 
+      setUser(data);
     }
-  }, [data]);
+  }, [data])
+
+  const setTransfer = async (n: number) => {
+    if (user.balance === undefined || user.balance < n) return;
+  
+    const updatedBalance = user.balance - n;
+  
+    if (!user.id) return;
+  
+    const updatedUser = {
+      ...user, 
+      balance: updatedBalance, 
+    };
+    const res = await updateUserBalance(user.id, updatedUser)
+    setUser(res)
+    await refetch()
+  };
+  
+  
+
 
   return (
-    <UserContext.Provider value={{ user, error, isPending }}>
+    <UserContext.Provider value={{ user: data ?? user, error, isPending, setTransfer }}>
       {children}
     </UserContext.Provider>
   );

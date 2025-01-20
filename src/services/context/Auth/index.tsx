@@ -1,4 +1,5 @@
 import React, { createContext, useState } from "react";
+import { AuthContextData } from "../../model";
 export const AuthContext = createContext<AuthContextData | undefined>(undefined);
 
 export const AuthProvider = ({ children }: { children: React.ReactNode }) => {
@@ -6,8 +7,8 @@ export const AuthProvider = ({ children }: { children: React.ReactNode }) => {
     !!localStorage.getItem("id")
   );
 
-  const login = (userId: number) => {
-    localStorage.setItem("id", userId.toString());
+  const login = (id: number) => {
+    localStorage.setItem("id", id.toString());
     setIsAuthenticated(true);
   };
 

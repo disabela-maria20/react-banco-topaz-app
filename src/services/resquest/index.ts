@@ -1,4 +1,5 @@
 import axios, { AxiosError, AxiosRequestConfig } from "axios";
+import { TransferProps, UsuariosProps } from "../model";
 
 const api = axios.create({
   baseURL: "http://localhost:3001/",
@@ -38,20 +39,55 @@ export const validacaoUsuario = async (data: UsuariosProps) => {
   }
 };
 
-
-export const getUsuaurio = async (id:string): Promise<UsuariosFinancas[]> => {
+export const getUsuaurio = async (id: string): Promise<UsuariosProps> => {
   const config: AxiosRequestConfig = {
     method: "GET",
-    url:  `balances?userId=${id}`,
+    url: `users/${id}`,
   };
 
   try {
     const res = await api(config);
-    const data: UsuariosFinancas[] = res.data;
+    const data: UsuariosProps = res.data;
+    
+    if (!data) {
+      throw new Error("Usuario não entrado");
+    }
 
-    if (!data) return [];
+    return data;
+  } catch (error) {
+    const e = error as AxiosError;
+    throw new Error(e.message);
+  }
+};
+
+export const postTransfer = async (data: TransferProps) => {
+  const config: AxiosRequestConfig = {
+    method: "POST",
+    url: `transfers`,
+    data: data,
+  };
+  try {
+    const res = await api(config);
+    const data: TransferProps = res.data;
     
     return data;
+  } catch (error) {
+    const e = error as AxiosError;
+    throw new Error(e.message);
+  }
+};
+
+export const updateUserBalance = async (id: number, balance: UsuariosProps) => {
+  const config: AxiosRequestConfig = {
+    method: "PUT",
+    url: `users/${id}`,
+    data: balance,
+  };
+
+  try {
+    const response = await api(config);
+    const data: UsuariosProps = await response.data;
+    return data
   } catch (error) {
     const e = error as AxiosError;
     throw new Error(e.message);

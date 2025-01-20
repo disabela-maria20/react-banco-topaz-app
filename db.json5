@@ -1,0 +1,114 @@
+{
+  "users": [
+    {
+      "id": "1",
+      "email": "joao.silva@email.com",
+      "senha": "joao.silva@email.com",
+      "name": "João Silva",
+      "balance": 5000
+    },
+    {
+      "id": "2",
+      "email": "maria.oliveira@email.com",
+      "senha": "senha123",
+      "name": "Maria Oliveira",
+      "balance": 3500.5
+    },
+    {
+      "id": "3",
+      "email": "carlos.santos@email.com",
+      "senha": "senha123",
+      "name": "Carlos Santos",
+      "balance": 7800.75
+    }
+  ],
+
+  "transfers": [
+    {
+      "id": "ec1e",
+      "transferValue": "50",
+      "bank": "Banco B",
+      "agency": "00001",
+      "account": "55692622",
+      "name": "funalo",
+      "id_transfers": 1
+    },
+    {
+      "id": "1bec",
+      "transferValue": "50,00",
+      "bank": "Banco X",
+      "agency": "95656",
+      "account": "6565656",
+      "name": "Funao",
+      "id_transfers": 1
+    },
+    {
+      "id": "3148",
+      "transferValue": "50",
+      "bank": "Banco A",
+      "agency": "654154",
+      "account": "62656565",
+      "name": "Fulano",
+      "id_transfers": 1
+    },
+    {
+      "id": "d7cc",
+      "transferValue": "50",
+      "bank": "Banco A",
+      "agency": "654154",
+      "account": "62656565",
+      "name": "Fulano",
+      "id_transfers": 1
+    },
+    {
+      "id": "9c2a",
+      "transferValue": "50",
+      "bank": "Banco A",
+      "agency": "654154",
+      "account": "62656565",
+      "name": "Fulano",
+      "id_transfers": 1
+    },
+    {
+      "id": 1,
+      "transferValue": "50",
+      "bank": "Banco B",
+      "agency": "6653",
+      "account": "656555",
+      "name": "Funao"
+    },
+    {
+      "id": 1,
+      "transferValue": "50",
+      "bank": "Banco aaa",
+      "agency": "544454",
+      "account": "54545484",
+      "name": "Funala"
+    },
+    {
+      "id": 1,
+      "transferValue": "50",
+      "bank": "Banco aaa",
+      "agency": "544454",
+      "account": "54545484",
+      "name": "Funala"
+    },
+    {
+      "id": 1,
+      "transferValue": "50",
+      "bank": "teste",
+      "agency": "655454",
+      "account": "450666",
+      "name": "qqqqqqqq",
+      "schedule": "2025-01-24T01:00"
+    },
+    {
+      "id": 1,
+      "transferValue": "50",
+      "bank": "Banco teste ",
+      "agency": "7485454545",
+      "account": "8787888888888",
+      "name": "sdsssssss"
+    }
+  ]
+}

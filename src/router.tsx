@@ -1,24 +1,26 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
-import { Home, Login, Transferir } from './pages'
+import { Extrato, Home, Login, Transfer } from './pages'
 import { useAuth } from './hook/useAuth'
+import { Suspense } from 'react'
 
 const Router = () => {
   const { isAuthenticated } = useAuth()
 
   return (
-    <BrowserRouter>
+    <Suspense fallback={<p>Carregando...</p>}>
+      <BrowserRouter>
       <Routes>
         <Route path="/" element={<Login />} />
         <Route path="*" element={<p>Rota não encontarda</p>} />
         {isAuthenticated && <>
           <Route path="/home" element={<Home />} />
-          <Route path="/transferir" element={<Transferir />} />
-          <Route path="/agendar" element={<Home />} />
-          <Route path="/todas-transferencias" element={<Home />} />
+          <Route path="/transferir" element={<Transfer />} />
+          <Route path="/extarto" element={<Extrato />} />
         </>}
-
       </Routes>
     </BrowserRouter>
+    </Suspense>
+    
   )
 }
 

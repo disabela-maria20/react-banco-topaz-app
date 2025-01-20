@@ -3,56 +3,239 @@
     {
       "id": "1",
       "email": "joao.silva@email.com",
-      "senha": "joao.silva@email.com"
+      "senha": "joao.silva@email.com",
+      "name": "João Silva",
+      "balance": 4350
     },
     {
       "id": "2",
       "email": "maria.oliveira@email.com",
-      "senha": "senha123"
+      "senha": "senha123",
+      "name": "Maria Oliveira",
+      "balance": 3500.5
     },
     {
       "id": "3",
       "email": "carlos.santos@email.com",
-      "senha": "senha123"
+      "senha": "senha123",
+      "name": "Carlos Santos",
+      "balance": 7800.75
     }
-  ],
-  "balances": [
-    { "name": "João Silva", "userId": 1, "balance": 5000 },
-    { "name": "Maria Oliveira", "userId": 2, "balance": 3500.5 },
-    { "name": "Carlos Santos", "userId": 3, "balance": 7800.75 }
   ],
   "transfers": [
     {
+      "id": "ec1e",
+      "transferValue": "50",
+      "bank": "Banco B",
+      "agency": "00001",
+      "account": "55692622",
+      "name": "funalo",
+      "id_transfers": 1
+    },
+    {
+      "id": "1bec",
+      "transferValue": "50,00",
+      "bank": "Banco X",
+      "agency": "95656",
+      "account": "6565656",
+      "name": "Funao",
+      "id_transfers": 1
+    },
+    {
+      "id": "3148",
+      "transferValue": "50",
+      "bank": "Banco A",
+      "agency": "654154",
+      "account": "62656565",
+      "name": "Fulano",
+      "id_transfers": 1
+    },
+    {
+      "id": "d7cc",
+      "transferValue": "50",
+      "bank": "Banco A",
+      "agency": "654154",
+      "account": "62656565",
+      "name": "Fulano",
+      "id_transfers": 1
+    },
+    {
+      "id": "9c2a",
+      "transferValue": "50",
+      "bank": "Banco A",
+      "agency": "654154",
+      "account": "62656565",
+      "name": "Fulano",
+      "id_transfers": 1
+    },
+    {
       "id": "1",
-      "userId": 1,
-      "recipient": "Maria Oliveira",
-      "amount": 1000,
-      "date": "2025-01-10",
-      "scheduled": false
+      "transferValue": "50",
+      "bank": "Banco B",
+      "agency": "6653",
+      "account": "656555",
+      "name": "Funao"
     },
     {
-      "id": "2",
-      "userId": 1,
-      "recipient": "Carlos Santos",
-      "amount": 500,
-      "date": "2025-01-12",
-      "scheduled": true
+      "id": "1",
+      "transferValue": "50",
+      "bank": "Banco aaa",
+      "agency": "544454",
+      "account": "54545484",
+      "name": "Funala"
     },
     {
-      "id": "3",
-      "userId": 2,
-      "recipient": "João Silva",
-      "amount": 750.5,
-      "date": "2025-01-08",
-      "scheduled": false
+      "id": "1",
+      "transferValue": "50",
+      "bank": "Banco aaa",
+      "agency": "544454",
+      "account": "54545484",
+      "name": "Funala"
     },
     {
-      "id": "4",
-      "userId": 3,
-      "recipient": "Maria Oliveira",
-      "amount": 1500,
-      "date": "2025-01-15",
-      "scheduled": true
+      "id": "1",
+      "transferValue": "50",
+      "bank": "teste",
+      "agency": "655454",
+      "account": "450666",
+      "name": "qqqqqqqq",
+      "schedule": "2025-01-24T01:00"
+    },
+    {
+      "id": "1",
+      "transferValue": "50",
+      "bank": "Banco teste ",
+      "agency": "7485454545",
+      "account": "8787888888888",
+      "name": "sdsssssss"
+    },
+    {
+      "id": "1",
+      "transferValue": "50",
+      "bank": "Banco A",
+      "agency": "656565",
+      "account": "5555555",
+      "name": "asasasas"
+    },
+    {
+      "id": "1",
+      "transferValue": "50",
+      "bank": "Banco",
+      "agency": "5545454",
+      "account": "5454444",
+      "name": "Nomw"
+    },
+    {
+      "id": "1",
+      "transferValue": "50",
+      "bank": "aaaaaaaaaa",
+      "agency": "5050",
+      "account": "655555555",
+      "name": "aaaaaaaaaaaaaaaaaa"
+    },
+    {
+      "id": "1",
+      "transferValue": "10",
+      "bank": "bamco A",
+      "agency": "656565656565656565",
+      "account": "555555555555555",
+      "name": "aaaaaaaaaaaaaaaaaaaaaa"
+    },
+    {
+      "id": "1",
+      "transferValue": "50",
+      "bank": "banco A",
+      "agency": "656565",
+      "account": "65666666",
+      "name": "Isabela"
+    },
+    {
+      "id": "1",
+      "transferValue": "50",
+      "bank": "Banco",
+      "agency": "54555555",
+      "account": "555555",
+      "name": "aaaaaa"
+    },
+    {
+      "id": "1",
+      "transferValue": "50",
+      "bank": "Banco",
+      "agency": "54555555",
+      "account": "555555",
+      "name": "aaaaaa"
+    },
+    {
+      "id": "1",
+      "transferValue": "50",
+      "bank": "Banco",
+      "agency": "54555555",
+      "account": "555555",
+      "name": "aaaaaa"
+    },
+    {
+      "id": "1",
+      "transferValue": "50",
+      "bank": "Banco a",
+      "agency": "54444444",
+      "account": "544444444444",
+      "name": "Nome"
+    },
+    {
+      "id": "1",
+      "transferValue": "50",
+      "bank": "Banco A",
+      "agency": "544444",
+      "account": "55555555555",
+      "name": "Nome"
+    },
+    {
+      "id": "1",
+      "transferValue": "50",
+      "bank": "Banco A",
+      "agency": "6555555",
+      "account": "555555555",
+      "name": "teste"
+    },
+    {
+      "id": "1",
+      "transferValue": "50",
+      "bank": "asasasa",
+      "agency": "656565",
+      "account": "6666666666",
+      "name": "Nome"
+    },
+    {
+      "id": "1",
+      "transferValue": "50",
+      "bank": "Banco B",
+      "agency": "5555555",
+      "account": "6000666",
+      "name": "Nome"
+    },
+    {
+      "id": "1",
+      "transferValue": "400",
+      "bank": "Banco B",
+      "agency": "2222222",
+      "account": "333333333333",
+      "name": "Nome"
+    },
+    {
+      "id": "1",
+      "transferValue": "50",
+      "bank": "Banco A",
+      "agency": "666666666",
+      "account": "6666666666",
+      "name": "aaaaaaaaaaaaaaaaaaaaa"
+    },
+    {
+      "id": "1",
+      "transferValue": "600",
+      "bank": "Banco x",
+      "agency": "5555555555555",
+      "account": "555555555555",
+      "name": "aaaaaaaaaaaaaaaaaaaaaaaaaaa"
     }
   ]
 }

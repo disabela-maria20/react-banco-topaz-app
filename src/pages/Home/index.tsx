@@ -4,7 +4,7 @@ import { UI } from '../../ui'
 import { Profile } from '../../components'
 import { useUser } from '../../hook/useUser';
 
-import { Link, NavLink } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 
 const Home = () => {
   const { isPending, error } = useUser();
@@ -27,8 +27,7 @@ const Home = () => {
             </div>
             <nav className={style.link}>
               <NavLink to={'/transferir'}>transferir</NavLink>
-              <NavLink to={'/transferir'}>Agendar</NavLink>
-              <NavLink to={'/transferir'}>extrato</NavLink>
+              <NavLink to={'/extarto'}>extrato</NavLink>
             </nav>
           </div>
         </div>

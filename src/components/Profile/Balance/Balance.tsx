@@ -1,5 +1,5 @@
 import { useUser } from '../../../hook/useUser';
-import style from './Balance.module.scss'
+import style from './Balance.module.scss';
 
 const moneyMask = (value: string) => {
   const numericValue = typeof value === 'string'
@@ -12,17 +12,16 @@ const moneyMask = (value: string) => {
   }).format(numericValue);
 
   return formattedValue;
-}
+};
+
 const Balance = () => {
   const { user } = useUser();
 
   return (
-    <>
-      {user && user.map((data) => (
-        <>{data.balance && <span className={style.money} key={data.balance}>{moneyMask(data.balance.toString())}</span>}</>
-      ))}
-    </>
-  )
-}
+    <span className={style.money}>
+      {user.balance ? moneyMask(user.balance.toString()) : 'R$ 0,00'}
+    </span>
+  );
+};
 
-export default Balance
+export default Balance;

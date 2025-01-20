@@ -1,4 +1,4 @@
-@use "sass:color";
+
 
 .Profile {
   font-family: $font-family;
@@ -44,27 +44,7 @@
         align-items: center;
       }
       a {
-        background: $color-dark-blue;
-        color: $color-white;
-        border: 1px solid $color-dark-blue;
-        padding: 10px 25px;
-        font-size: 1.5rem;
-        border-radius: 5px;
-        text-transform: uppercase;
-        display: block;
-        width: 100%;
-        transition: all 400ms ease;
-        cursor: pointer;
-        text-decoration: none;
-        text-align: center;
-  
-        &:hover {
-          background-color: color.scale($color-dark-blue, $lightness: -53.2173913043%);
-        }
-
-        &:focus {
-          background-color: color.adjust($color-dark-blue, $lightness: -12%);
-        }
+        @include btn;
       }
     }
   }
